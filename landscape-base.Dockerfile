@@ -1,14 +1,7 @@
 FROM   ubuntu:16.04
 
-
 # Make sure we don't get notifications we can't answer during building.
 ENV    DEBIAN_FRONTEND noninteractive
-
-RUN apt-get --yes update
-RUN apt-get --yes install software-properties-common
-
-# Add the landscape PPA
-RUN	   add-apt-repository ppa:landscape/16.06
 
 # Download and install everything from the repos.
 RUN    apt-get --yes update; apt-get --yes upgrade
@@ -38,7 +31,6 @@ RUN    apt-get --yes install binutils \
  python-convoy \
  python-pycurl \
  python-dateutil \
- python-fake-factory \
  python-genshi \
  python-gnupg \
  python-lxml \
